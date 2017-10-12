@@ -1,5 +1,10 @@
 import numpy
 
+class funCluster:
+    """聚类使用的方法"""
+    def __init__(self,X ):
+        self.X = X
+
 def getNp_array(tup):
     return numpy.array(list(tup))
     
