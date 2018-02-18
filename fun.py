@@ -17,6 +17,7 @@ def getCluster(X,Z1,Z2):
         else: Z[1].append(tmp)
         tmp = next(Y,0)
     return Z
+
 #一个坐标点，两个聚类中心，得到离坐标点最近的聚类中心
 def getMinlength(p,Z1,Z2):
     p=getNp_array(p)
@@ -26,6 +27,11 @@ def getMinlength(p,Z1,Z2):
 
 def getMidpoint(X,Zk):
     return sum([getNp_array(X[n]) for n in Zk])/len(Zk)
+
+def getMatlength(X,tmp,Z):
+    print([getDistance(X[tmp],getMidpoint(X,x)) for x in Z])
+    print(numpy.min([getDistance(X[tmp],getMidpoint(X,x)) for x in Z]))
+    return numpy.min([getDistance(X[tmp],getMidpoint(X,x)) for x in Z])
 
 def getArg(X,Zi,Zk):
     #X:以字典保存的所有的数据集
